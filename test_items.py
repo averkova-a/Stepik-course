@@ -1,4 +1,4 @@
-# так как задание состоит в том, чтобы проверить наличие кнопки, то достаточно лишь поиска элемента. В случае отсутствия
-# мы в любом случае получим ошибку, поэтому дополнительные ассерт или что-либо еще не требуются
+# для ассерт подаем список найденных элементов. Если длина списка 1 (одна кнопка найдена) - пройден
 def test_find_button(browser):
-    browser.find_element_by_class_name("btn-add-to-basket")
+    btn = browser.find_elements_by_class_name("btn-add-to-basket")
+    assert len(btn) == 1 , "There's no button!"
